@@ -581,6 +581,96 @@ body {
   font-weight: 300;
 }
 
+/* ─── ETL ─── */
+.etl-section { background: var(--gris-fondo); }
+
+.etl-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.etl-item {
+  background: white;
+  border-radius: 12px;
+  padding: 20px 22px;
+  border: 1px solid var(--gris-linea);
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.etl-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.etl-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #166534;
+  margin-bottom: 5px;
+}
+
+.etl-item p {
+  font-size: 13px;
+  color: var(--gris-suave);
+  line-height: 1.65;
+  margin: 0;
+  font-weight: 300;
+}
+
+.etl-item code {
+  background: var(--verde-suave);
+  color: #166534;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: monospace;
+}
+
+.etl-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 22px;
+  background: white;
+  border: 1px solid var(--gris-linea);
+  border-radius: 12px;
+  flex-wrap: wrap;
+}
+
+.etl-footer span {
+  font-size: 14px;
+  color: var(--gris-suave);
+  font-weight: 300;
+}
+
+.etl-btn {
+  display: inline-block;
+  background: var(--verde-oscuro);
+  color: white;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.etl-btn:hover { background: var(--verde-medio); }
+
+@media (max-width: 860px) {
+  .etl-grid { grid-template-columns: 1fr; }
+  .etl-footer { flex-direction: column; align-items: flex-start; }
+}
+
 /* ─── COLOMBIA ─── */
 .colombia-section { background: white; }
 
@@ -710,7 +800,7 @@ body {
 <!-- ═══ HERO ═══ -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-label">DataTellers · Bank Marketing · 2026</div>
+    <div class="hero-label">DataTellers · Bank Marketing · 2025</div>
     <h1>No es a quién llamas.<br><em>Es cómo los llamas.</em></h1>
     <p class="hero-subtitle">Cómo la estrategia de contacto supera al perfil del cliente en las campañas bancarias</p>
     <p class="hero-desc">
@@ -819,6 +909,60 @@ body {
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- ═══ DOCUMENTACIÓN ETL ═══ -->
+<section class="section etl-section">
+  <div class="wrap">
+
+    <span class="section-tag">Documentación técnica</span>
+    <h2 class="section-title">Cómo se prepararon los datos</h2>
+    <p class="section-lead" style="margin-bottom: 28px;">
+      El dataset original de 45.211 registros pasó por un proceso de extracción, limpieza y transformación antes de ser visualizado. Estos son los puntos clave del proceso ETL.
+    </p>
+
+    <div class="etl-grid">
+
+      <div class="etl-item">
+        <div class="etl-icon">📥</div>
+        <div>
+          <div class="etl-label">Extracción</div>
+          <p>Archivo CSV (separado por <code>;</code>) cargado con <code>pandas</code>. 45.211 registros × 17 variables. Sin valores nulos formales — los <em>unknown</em> se conservaron como categoría válida.</p>
+        </div>
+      </div>
+
+      <div class="etl-item">
+        <div class="etl-icon">🔧</div>
+        <div>
+          <div class="etl-label">Transformaciones clave</div>
+          <p>Variables binarias (yes/no → 1/0), mes convertido a número ordinal, duración de llamada pasada de segundos a minutos, y segmentación de edades en 6 rangos etarios.</p>
+        </div>
+      </div>
+
+      <div class="etl-item">
+        <div class="etl-icon">⚙️</div>
+        <div>
+          <div class="etl-label">Variables derivadas</div>
+          <p>Se crearon 8 variables adicionales, entre ellas <code>previous_contacted</code> (¿fue contactado antes?) y <code>duration_min</code>, que son las que sustentan los hallazgos narrativos del análisis.</p>
+        </div>
+      </div>
+
+      <div class="etl-item">
+        <div class="etl-icon">✅</div>
+        <div>
+          <div class="etl-label">Dataset final</div>
+          <p>25 variables totales (17 originales + 8 derivadas), 45.211 registros completos, 0 valores nulos. Listo para visualización.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="etl-footer">
+      <span>¿Quieres ver el proceso completo, el diccionario de variables y las estadísticas descriptivas?</span>
+      <a class="etl-btn" href="https://drive.google.com/file/d/1YinJfofr6TPrTNNz_iA0ic1FP__L8mA_/view?usp=sharing" target="_blank">Ver documentación completa →</a>
+    </div>
+
   </div>
 </section>
 
