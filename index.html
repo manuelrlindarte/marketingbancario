@@ -573,6 +573,53 @@ body {
   font-weight: 300;
 }
 
+/* ─── COLOMBIA ─── */
+.colombia-section { background: white; }
+
+.colombia-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 860px;
+}
+
+.colombia-bullets li {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px 22px;
+  background: var(--gris-fondo);
+  border-radius: 12px;
+  border: 1px solid var(--gris-linea);
+}
+
+.cb-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.colombia-bullets li div {
+  font-size: 14px;
+  color: var(--gris-suave);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+.colombia-bullets li strong {
+  color: var(--negro);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.colombia-bullets li em {
+  font-style: italic;
+  color: var(--gris-texto);
+}
+
 /* ─── CONCLUSION BANNER ─── */
 .conclusion-banner {
   background: var(--verde-claro);
@@ -655,7 +702,7 @@ body {
 <!-- ═══ HERO ═══ -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-label">DataTellers · Bank Marketing · 2026</div>
+    <div class="hero-label">DataTellers · Bank Marketing · 2025</div>
     <h1>No es a quién llamas.<br><em>Es cómo los llamas.</em></h1>
     <p class="hero-subtitle">Cómo la estrategia de contacto supera al perfil del cliente en las campañas bancarias</p>
     <p class="hero-desc">
@@ -753,7 +800,7 @@ body {
           <div>
             <div class="ctx-card-label">Fuente de datos</div>
             <h4>Bank Marketing Dataset — Banco Portugués</h4>
-            <p>Dataset público con 45.211 registros de campañas reales. Variables demográficas, financieras y operativas de cada contacto.</p>
+            <p>Dataset público disponible en <a href="https://www.kaggle.com/datasets/abdelazizsami/bank-marketing" target="_blank" style="color:#166534; font-weight:600;">Kaggle</a>, con 45.211 registros de campañas telefónicas reales realizadas entre 2008 y 2013. Cada registro contiene variables demográficas del cliente (edad, ocupación, nivel educativo, estado civil), variables financieras (saldo en cuenta, historial de crédito) y variables operativas de la campaña (canal de contacto, número de intentos, duración de la llamada, resultado). La problemática central es la baja tasa de conversión (11,7%) frente al alto volumen de esfuerzo comercial invertido.</p>
           </div>
         </div>
 
@@ -945,7 +992,51 @@ body {
   </div>
 </section>
 
-<!-- ═══ CONCLUSIÓN ═══ -->
+<!-- ═══ APLICACIÓN EN COLOMBIA ═══ -->
+<section class="section colombia-section">
+  <div class="wrap">
+
+    <span class="section-tag">Aplicación en contexto local</span>
+    <h2 class="section-title">¿Qué le diría este análisis a la banca colombiana?</h2>
+    <p class="section-lead">
+      Aunque los datos provienen de una campaña bancaria portuguesa, los patrones encontrados son estructuralmente similares a los que enfrentan los equipos comerciales de bancos y fintechs en Colombia. Las palancas de mejora son las mismas; el contexto, diferente.
+    </p>
+
+    <ul class="colombia-bullets">
+      <li>
+        <span class="cb-icon">🇨🇴</span>
+        <div>
+          <strong>El contacto previo pesa más en mercados de baja bancarización.</strong>
+          En Colombia, la desconfianza histórica hacia el sistema financiero hace que la relación previa sea aún más determinante. Bancos como Bancolombia, Davivienda o Nequi deberían priorizar estrategias de <em>cross-selling</em> con clientes existentes antes que buscar prospectos nuevos — el equivalente local es el CDT.
+        </div>
+      </li>
+      <li>
+        <span class="cb-icon">📱</span>
+        <div>
+          <strong>En Colombia el celular no es una opción: es el único canal real.</strong>
+          La penetración de telefonía fija es marginal; la de smartphones supera el 70% de la población adulta. WhatsApp Business y las llamadas a celular son el equivalente directo del canal más efectivo del estudio — ignorarlos es perder efectividad de forma innecesaria.
+        </div>
+      </li>
+      <li>
+        <span class="cb-icon">🔁</span>
+        <div>
+          <strong>Más llamadas no es una estrategia: es un síntoma de falta de datos.</strong>
+          Las campañas de colocación de CDTs, tarjetas y seguros en Colombia son intensivas en volumen. El patrón de rendimientos decrecientes aplica igual: la solución es priorizar con scoring predictivo, no aumentar intentos. Herramientas de ML en la nube hoy están al alcance de bancos medianos y fintechs locales.
+        </div>
+      </li>
+      <li>
+        <span class="cb-icon">🎙️</span>
+        <div>
+          <strong>El KPI de duración puede estar penalizando la calidad.</strong>
+          Los contact centers colombianos suelen medir el éxito con AHT (tiempo promedio de atención), incentivando llamadas cortas. Este análisis sugiere que esa métrica va en sentido contrario a la conversión: un agente que sostiene conversaciones más profundas genera más valor. Migrar de KPIs de volumen a KPIs de calidad es una conclusión directamente aplicable.
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</section>
+
+
 <section class="conclusion-banner">
   <div class="conclusion-banner-inner">
     <p class="big-quote">"La campaña no falla porque llama a las personas equivocadas. Falla porque no está aprendiendo de cómo llama."</p>
